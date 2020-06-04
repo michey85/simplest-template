@@ -1,0 +1,44 @@
+.stage {
+    @include section();
+
+    background-color: $primaryColor;
+    &__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media ($tablet) {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+    &__title {
+        @include h1();
+    }
+    &__list {
+        @include lead();
+
+        &-item {
+            padding-left: 0.5rem;
+            list-style: url('../images/check_icon.png');
+        }
+    }
+
+    &__image {
+        @include img($white);
+        width: 100%;
+        height: 21.4rem;
+        margin-bottom: 2rem;
+
+        @media ($tablet) {
+            max-width: 300px;
+            flex-shrink: 0;
+            margin-left: 4rem;
+            margin-bottom: 0;
+        }
+        @media ($desktop) {
+            max-width: 469px;
+            margin-bottom: 0;
+            margin-left: 8rem;
+        }
+    }
+}

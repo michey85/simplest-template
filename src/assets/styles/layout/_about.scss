@@ -1,0 +1,46 @@
+.about {
+    @include section();
+
+    background-color: $white;
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+
+        @media ($tablet) {
+            flex-direction: row;
+        }
+    }
+
+    &__title {
+        @include h2($align: left);
+    }
+
+    &__desc {
+        @include p1();
+        margin-bottom: 2rem;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__image {
+        @include img();
+
+        height: 245px;
+        width: 100%;
+        margin-bottom: 1.5rem;
+
+        @media ($tablet) {
+            flex-shrink: 0;
+            width: 250px;
+            margin-bottom: 0;
+            margin-left: 5rem;
+        }
+        @media ($desktop) {
+            margin-left: 10rem;
+            width: 430px;
+        }
+    }
+}

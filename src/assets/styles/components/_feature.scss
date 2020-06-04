@@ -1,0 +1,16 @@
+.feature {
+    padding-left: 4.1rem;
+    width: 100%;
+    position: relative;
+
+    &__text {
+        @include p1();
+    }
+
+    &::before {
+        content: url(../images/plus-icon.png);
+        position: absolute;
+        top: 0.4rem;
+        left: 0;
+    }
+}

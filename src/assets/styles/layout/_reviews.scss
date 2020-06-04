@@ -1,0 +1,31 @@
+.reviews {
+    @include section();
+    background-color: $grey3;
+
+    &__title {
+        @include h2();
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+
+        @media ($tablet) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .review {
+            margin-bottom: 2.5rem;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @media ($tablet) {
+                flex-basis: calc(50% - 1.6rem);
+            }
+        }
+    }
+}

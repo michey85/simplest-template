@@ -1,0 +1,110 @@
+@mixin h1($color: $white) {
+    font-size: 4rem;
+    color: $color;
+    font-family: $mainFont;
+    text-shadow: $mainShadow;
+    margin-bottom: 1.8rem;
+
+    @media ($tablet) {
+        font-size: 5.9rem;
+        margin-bottom: 3rem;
+    }
+}
+
+@mixin h2($color: $primaryColor, $align: center) {
+    color: $color;
+    font-size: 3rem;
+    text-align: $align;
+    line-height: 1.2;
+    margin-bottom: 3rem;
+    font-weight: normal;
+}
+
+@mixin h3($color: $primaryColor) {
+    color: $color;
+    font-size: 2.4rem;
+    line-height: 1.25;
+}
+
+@mixin p1($color: $textColor) {
+    font-size: 1.6rem;
+    color: $color;
+    line-height: 1.5;
+}
+
+@mixin p2($color: $textColor) {
+    font-size: 1.4rem;
+    color: $color;
+    line-height: 1.29;
+}
+
+@mixin lead($color: $white) {
+    font-size: 2rem;
+    line-height: 1.8;
+    text-shadow: $mainShadow;
+    color: $color;
+}
+
+@mixin img($bg: $primaryColor) {
+    background-color: $bg;
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin section($pt: 5rem, $pb: 5rem) {
+    padding-top: $pt;
+    padding-bottom: $pb;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+
+    @media ($projector) {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+%input {
+    color: $secondaryColor;
+    font-size: 1.6rem;
+    background-color: $white;
+    padding: 1.4rem 1rem;
+    line-height: 1;
+    border: none;
+    border-radius: 0.5rem;
+
+    &::placeholder {
+        color: $secondaryColor;
+    }
+}
+
+%textarea {
+    @extend %input;
+
+    resize: none;
+    height: 7rem;
+    font-family: $mainFont;
+}
+
+%btn {
+    display: inline-block;
+    background-color: $white;
+    color: $primaryColor;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1;
+    padding: 1.4rem 4.8rem;
+    cursor: pointer;
+    border: none;
+    text-align: center;
+    user-select: none;
+    text-decoration: none;
+    border-radius: 5px;
+
+    &:hover {
+        background-color: darken($white, 20%);
+    }
+    &:focus {
+        outline: none;
+    }
+}
